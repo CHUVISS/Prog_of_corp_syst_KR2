@@ -1,0 +1,14 @@
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/bin/Debug/net9.0/PL1
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/bin/Debug/net9.0/PL1.deps.json
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/bin/Debug/net9.0/PL1.runtimeconfig.json
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/bin/Debug/net9.0/PL1.dll
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/bin/Debug/net9.0/PL1.pdb
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/PL1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/PL1.AssemblyInfoInputs.cache
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/PL1.AssemblyInfo.cs
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/PL1.csproj.CoreCompileInputs.cache
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/PL1.dll
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/refint/PL1.dll
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/PL1.pdb
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/PL1.genruntimeconfig.cache
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL1/obj/Debug/net9.0/ref/PL1.dll
