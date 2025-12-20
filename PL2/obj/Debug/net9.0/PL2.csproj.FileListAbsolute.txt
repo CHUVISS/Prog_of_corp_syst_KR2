@@ -12,3 +12,4 @@
 /Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL2/obj/Debug/net9.0/PL2.pdb
 /Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL2/obj/Debug/net9.0/PL2.genruntimeconfig.cache
 /Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL2/obj/Debug/net9.0/ref/PL2.dll
+/Users/aleksandrchuvilov/Desktop/New chapter/KR2/PL2/obj/Debug/net9.0/PL2.sourcelink.json

@@ -6,7 +6,6 @@ class Program
   {
     Console.WriteLine("Выберите номер задания (2–7):");
     int task = ReadInt("Номер задания: ", 2, 7);
-
     switch (task)
     {
       case 2: Task2_LuckyTicket(); break;
@@ -110,8 +109,12 @@ class Program
       else
         right = mid;
     }
-
-    Console.WriteLine($"Ваше число: {left}");
+    if (left < 64){
+      Console.WriteLine($"Ваше число: {left}");
+    }
+    else{
+      Console.WriteLine("Вы допустили ошибку!");
+    }
   }
 
   // ===== Задание 5 =====
@@ -122,32 +125,39 @@ class Program
 
     int americano = 0, latte = 0, money = 0;
 
-    while (water >= 300 || (water >= 30 && milk >= 270))
+    while (true)
     {
-      int choice = ReadInt("Выберите напиток (1 — американо, 2 — латте): ", 1, 2);
+      bool canAmericano = water >= 300;
+      bool canLatte = water >= 30 && milk >= 270;
 
-      if (choice == 1)
+      if (!canAmericano && !canLatte)
+        break;
+
+      Console.Write("Выберите напиток: ");
+      if (canAmericano) Console.Write("1 — американо ");
+      if (canLatte) Console.Write("2 — латте ");
+      Console.WriteLine();
+
+      int choice = ReadInt("Ваш выбор: ", 1, 2);
+
+      if (choice == 1 && canAmericano)
       {
-        if (water >= 300)
-        {
-          water -= 300;
-          americano++;
-          money += 150;
-          Console.WriteLine("Ваш напиток готов");
-        }
-        else Console.WriteLine("Не хватает воды");
+        water -= 300;
+        americano++;
+        money += 150;
+        Console.WriteLine("Ваш напиток готов");
+      }
+      else if (choice == 2 && canLatte)
+      {
+        water -= 30;
+        milk -= 270;
+        latte++;
+        money += 170;
+        Console.WriteLine("Ваш напиток готов");
       }
       else
       {
-        if (water >= 30 && milk >= 270)
-        {
-          water -= 30;
-          milk -= 270;
-          latte++;
-          money += 170;
-          Console.WriteLine("Ваш напиток готов");
-        }
-        else Console.WriteLine("Не хватает молока");
+        Console.WriteLine("Этот напиток сейчас недоступен");
       }
     }
 
@@ -194,18 +204,22 @@ class Program
 
     while (true)
     {
-      int width = a + 2 * (d + 1);
-      int height = b + 2 * (d + 1);
+      int width1 = a + 2 * d;
+      int height1 = b + 2 * d;
 
-      int cols = w / width;
-      int rows = h / height;
+      int width2 = b + 2 * d;
+      int height2 = a + 2 * d;
 
-      if (cols * rows >= n)
+      bool fits =
+        (w / width1) * (h / height1) >= n ||
+        (w / width2) * (h / height2) >= n;
+
+      if (fits)
         d++;
       else
         break;
     }
 
-    Console.WriteLine($"Ответ d = {d}");
+    Console.WriteLine($"Ответ d = {d - 1}");
   }
 }

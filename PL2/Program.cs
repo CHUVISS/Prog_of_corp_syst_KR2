@@ -11,16 +11,16 @@ class MatrixCalculator
     double[,] matrix1 = new double[n, m];
     double[,] matrix2 = new double[n, m];
 
-    int choice = ReadInt("Выберите способ заполнения матриц: 1 - с клавиатуры, 2 - случайные числа: ");
+    //Первая матрица ввод
+    int choice1 = ReadInt("Выберите способ заполнения матрицы 1: 1 - с клавиатуры, 2 - случайные числа: ");
 
-    if (choice == 1)
+    if (choice1 == 1)
     {
       Console.WriteLine("Введите элементы первой матрицы:");
       FillMatrixFromInput(matrix1);
-      Console.WriteLine("Введите элементы второй матрицы:");
-      FillMatrixFromInput(matrix2);
+
     }
-    else if (choice == 2)
+    else if (choice1 == 2)
     {
       int a = ReadInt("Введите начало диапазона случайных чисел (a): ");
       int b = ReadInt("Введите конец диапазона случайных чисел (b): ");
@@ -28,18 +28,43 @@ class MatrixCalculator
 
       Random rnd = new Random();
       FillMatrixRandom(matrix1, rnd, a, b);
-      FillMatrixRandom(matrix2, rnd, a, b);
-
-      Console.WriteLine("Матрица 1:");
-      PrintMatrix(matrix1);
-      Console.WriteLine("Матрица 2:");
-      PrintMatrix(matrix2);
     }
     else
     {
       Console.WriteLine("Неверный выбор. Завершение программы.");
       return;
     }
+    
+    
+    //Вторая матрица ввод
+    int choice2 = ReadInt("Выберите способ заполнения матрицы 2: 1 - с клавиатуры, 2 - случайные числа: ");
+
+    if (choice2 == 1)
+    {
+      Console.WriteLine("Введите элементы второй матрицы:");
+      FillMatrixFromInput(matrix2);
+
+    }
+    else if (choice2== 2)
+    {
+      int a = ReadInt("Введите начало диапазона случайных чисел (a): ");
+      int b = ReadInt("Введите конец диапазона случайных чисел (b): ");
+      if (b < a) { Console.WriteLine("Некорректный диапазон! Меняем местами."); int temp = a; a = b; b = temp; }
+
+      Random rnd = new Random();
+      FillMatrixRandom(matrix2, rnd, a, b);
+
+    }
+    else
+    {
+      Console.WriteLine("Неверный выбор. Завершение программы.");
+      return;
+    }
+
+    Console.WriteLine("Матрица 1:");
+    PrintMatrix(matrix1);
+    Console.WriteLine("Матрица 2:");
+    PrintMatrix(matrix2);
 
     // Сложение матриц
     Console.WriteLine("\nСложение матриц:");
@@ -127,8 +152,13 @@ class MatrixCalculator
       {
         while (true)
         {
-          Console.Write($"[{i},{j}]: ");
-          if (double.TryParse(Console.ReadLine(), out matrix[i, j])) break;
+          Console.Write($"[{i+1},{j+1}]: ");
+
+          string input = Console.ReadLine();
+
+          string normalInput = input?.Replace(',', '.');
+
+          if (double.TryParse((normalInput), out matrix[i, j])) break;
           Console.WriteLine("Ошибка! Введите число.");
         }
       }
